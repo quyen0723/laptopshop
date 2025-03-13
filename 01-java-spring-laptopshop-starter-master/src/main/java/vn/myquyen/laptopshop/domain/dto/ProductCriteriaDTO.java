@@ -4,11 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductCriteriaDTO {
-    private Optional<String> page;
-    private Optional<List<String>> factory;
-    private Optional<List<String>> target;
-    private Optional<List<String>> price;
-    private Optional<String> sort;
+    //    private Optional<String> page;
+//    private Optional<List<String>> factory;
+//    private Optional<List<String>> target;
+//    private Optional<List<String>> price;
+//    private Optional<String> sort;
+    private Optional<String> page = Optional.of("1"); // Mặc định trang đầu tiên
+    private Optional<List<String>> factory = Optional.empty();
+    private Optional<List<String>> target = Optional.empty();
+    private Optional<List<String>> price = Optional.empty();
+    private Optional<String> sort = Optional.empty();
+
+    // Constructor mặc định
+    public ProductCriteriaDTO() {
+    }
+
 
     public Optional<String> getPage() {
         return page;

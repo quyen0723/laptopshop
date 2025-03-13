@@ -25,9 +25,11 @@ public class ItemController {
         this.productService = productService;
     }
 
-    @GetMapping("/produts")
-    public String getProductPage(Model model, ProductCriteriaDTO productCriteriaDTO, HttpServletRequest request) {
+    @GetMapping("/products")
+    public String getProductPage(Model model,
+                                 @ModelAttribute ProductCriteriaDTO productCriteriaDTO, HttpServletRequest request) {
         int page = 1;
+
         try {
             if (productCriteriaDTO.getPage().isPresent()) {
                 page = Integer.parseInt(productCriteriaDTO.getPage().get());
